@@ -1,0 +1,28 @@
+#include <iostream>
+struct ListNode
+{
+    int val;
+    ListNode *next;
+    ListNode(int x) : val(x), next(NULL) {}
+};
+class Solution
+{
+public:
+    ListNode *getIntersectionNode(ListNode *headA, ListNode *headB)
+    {
+        if (headA == nullptr || headB == nullptr)
+        {
+            return nullptr;
+        }
+        ListNode *pA = headA, *pB = headB;
+        while (pA != pB)
+        {
+            pA = pA == nullptr ? headB : pA->next;
+            pB = pB == nullptr ? headA : pB->next;
+        }
+        return pA;
+    }
+};
+// 相交后续节点相同，长度差距通过切换链表来抵消，最终相交点相同
+// 题目设定后续节点地址相同，不仅仅是值相同
+// 时间复杂度O(m+n)，空间复杂度O(1)
