@@ -27,7 +27,21 @@ public:
                 dis = min(dis, 2 * (posi[k + 2] - posi[k]));
             }
         }
+    /*
+        若不用auto
 
+        for (pair<const int, vector<int>>& item : pos)  // 或者用const pair<const int, vector<int>>&
+        {
+            int num = item.first;
+            vector<int>& posi = item.second;
+            
+            for (int k = 0; k <= (int)posi.size() - 3; k++)
+            {
+                dis = min(dis, 2 * (posi[k + 2] - posi[k]));
+            }
+        }
+        
+        */
         return dis == 200000 ? -1 : dis;
     }
 };
