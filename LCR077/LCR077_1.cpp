@@ -1,5 +1,5 @@
 #include <iostream>
-
+#include <functional>
 struct ListNode
 {
     int val;
@@ -23,7 +23,7 @@ public:
             v.push_back(p->val);
             p = p->next;
         }
-        sort(v.begin(), v.end(), greater<int>()); // greater是标准库提供的
+        sort(v.begin(), v.end(), greater<int>()); // greater是functional提供的
         ListNode *temp = nullptr;
         for (int i = 0; i < v.size(); i++)
         {
