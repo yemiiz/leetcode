@@ -2,6 +2,30 @@
 
 请必须使用时间复杂度为 `O(log n)` 的算法。
 
+```
+class Solution {
+public:
+    int searchInsert(vector<int>& nums, int target) {
+        int l = -1,r = nums.size();
+        while(l+1<r)
+        {
+            int mid = l+(r-l)/2;
+            if(nums[mid]<target)
+            {
+                l = mid;
+            }
+            else
+            {
+                r = mid;
+            }
+        }
+        return r;
+    }
+};
+```
+# 核心
+if里的是left最终停留位置，else是right最终停留位置
+
 **示例 1:**
 
 ```
