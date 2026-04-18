@@ -21,7 +21,7 @@ public:
                 auto& vec = mp[nums[q]];    //！！！
                 int len = vec.size();
 
-                int pos = lower_bound(vec.begin(), vec.end(), q) - vec.begin(); //lower_bound找到第一个出现q的位置！！
+                int pos = lower_bound(vec.begin(), vec.end(), q) - vec.begin(); //lower_bound找到第一个出现q的位置！！    lower_bound只能在有序容器里使用
 
                 int pre = vec[(pos-1+len)%len];
                 int nxt = vec[(pos+1)%len];
